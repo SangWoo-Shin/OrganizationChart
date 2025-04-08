@@ -1,0 +1,47 @@
+@import "tailwindcss";
+
+@layer components {
+  .tree-node-wrapper {
+    @apply relative;
+  }
+
+  .tree-node-wrapper::before {
+    content: "";
+    @apply absolute top-0 left-1/2 w-0.5 h-5 bg-gray-400;
+    transform: translateX(-50%);
+  }
+
+  .tree-node {
+    @apply relative pt-5;
+    margin-left: 20px;
+  }
+
+  .tree-node::before {
+    content: "";
+    @apply absolute top-121 left-1/2 w-0.5 h-5 bg-gray-400;
+    transform: translateX(-50%)
+  }
+
+  .subordinates::before {
+    content: "";
+    @apply absolute top-0 left-1/2 w-0.5 h-5 bg-gray-400;
+  }
+
+  .horizontal-subordinates {
+    @apply flex gap-2 justify-center mt-5;
+    width: auto;
+    position: relative;
+  }
+
+  .horizontal-subordinates::before {
+    content: "";
+    @apply absolute top-0 left-0 right-0 h-0.5 bg-gray-400;
+    width: calc(100% - 18.6rem);
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .horizontal-subordinates > .tree-node-2::before {
+    @apply top-[-20px] h-5;
+  }
+}
