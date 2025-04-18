@@ -1,0 +1,5 @@
+{
+    "name": "Vue App Dev Container",
+    "image": "node:18",
+    "postCreateCommand": "npm install"
+  }
